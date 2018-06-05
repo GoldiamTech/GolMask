@@ -104,6 +104,7 @@ ConfigScreen.prototype.render = function () {
 
           h('hr.horizontal-line'),
 
+          /*
           h('div', {
             style: {
               marginTop: '20px',
@@ -125,7 +126,7 @@ ConfigScreen.prototype.render = function () {
                   if (err) {
                     state.dispatch(actions.displayWarning('Error in retrieving state logs.'))
                   } else {
-                    exportAsFile('MetaMask State Logs.json', result)
+                    exportAsFile('GolMask State Logs.json', result)
                   }
                 })
               },
@@ -133,6 +134,7 @@ ConfigScreen.prototype.render = function () {
           ]),
 
           h('hr.horizontal-line'),
+          */
 
           h('div', {
             style: {
@@ -150,6 +152,7 @@ ConfigScreen.prototype.render = function () {
             }, 'Reveal Seed Words'),
           ]),
 
+          /*
           h('hr.horizontal-line'),
 
           h('div', {
@@ -178,6 +181,7 @@ ConfigScreen.prototype.render = function () {
               },
             }, 'Reset Account Nonce'),
           ]),
+          */
 
         ]),
       ]),

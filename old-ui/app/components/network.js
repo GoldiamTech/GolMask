@@ -41,7 +41,7 @@ Network.prototype.render = function () {
       h('i.fa.fa-caret-down'),
     ])
   } else if (providerName === 'goldiam') {
-    hoverText = 'Goldiam Network'
+    hoverText = 'Goldiam MainNet'
     iconName = 'goldiam-network'
   } else if (providerName === 'goldiamtest') {
     hoverText = 'Goldiam Test Network'
@@ -81,7 +81,7 @@ Network.prototype.render = function () {
                 style: {
                   color: '#e7a218',
                 }},
-              'Goldiam Network'),
+              'Goldiam MainNet'),
               props.onClick && h('i.fa.fa-caret-down.fa-lg'),
             ])
           case 'goldiam-network-test':

@@ -2,7 +2,11 @@ const MAINET_RPC_URL = 'https://mainnet.infura.io/metamask'
 const ROPSTEN_RPC_URL = 'https://ropsten.infura.io/metamask'
 const KOVAN_RPC_URL = 'https://kovan.infura.io/metamask'
 const RINKEBY_RPC_URL = 'https://rinkeby.infura.io/metamask'
-const GOLDIAM_RPC_URL = 'https://calypsum.goldiambox.io'
+/*
+ * to set up the authentication we edited the module ../../node_modules/web3-provider-engine/subproviders/fetch.js
+ * to make it work, the password must be encoded in base64 and sent in a header as 'Authorization': `Basic ${encoded-pass}`
+*/
+const GOLDIAM_RPC_URL = 'https://calypsum.io/mainnet'
 const GOLDIAM_TEST_RPC_URL = 'https://testnet.goldiambox.io'
 const LOCALHOST_RPC_URL = 'http://localhost:2009'
 

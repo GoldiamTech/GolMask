@@ -157,12 +157,13 @@ AccountDetailScreen.prototype.render = function () {
 
               h('div', {
                 style: {
-                  overflow: 'hidden',
+                  //overflow: 'hidden',
+                  marginLeft:'-5em',
                   textOverflow: 'ellipsis',
                   paddingTop: '3px',
                   width: '5em',
                   height: '15px',
-                  fontSize: '13px',
+                  fontSize: '11px',
                   fontFamily: 'Montserrat Light',
                   textRendering: 'geometricPrecision',
                   marginBottom: '15px',
@@ -194,10 +195,12 @@ AccountDetailScreen.prototype.render = function () {
 
           h('.flex-grow'),
 
+          /*
           h('button', {
             onClick: () => props.dispatch(actions.buyEthView(selected)),
             style: { marginRight: '10px' },
           }, 'BUY'),
+          */
 
           h('button', {
             onClick: () => props.dispatch(actions.showSendPage()),

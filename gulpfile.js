@@ -118,7 +118,7 @@ gulp.task('manifest:opera', function() {
       "tabs",
       "clipboardWrite",
       "clipboardRead",
-      "http://localhost:8545/"
+      "http://localhost:2009/"
     ]
     return json
   }))
@@ -330,7 +330,7 @@ function copyTask(opts){
 function zipTask(target) {
   return () => {
     return gulp.src(`dist/${target}/**`)
-    .pipe(zip(`metamask-${target}-${manifest.version}.zip`))
+    .pipe(zip(`golmask-${target}-${manifest.version}.zip`))
     .pipe(gulp.dest('builds'))
   }
 }
