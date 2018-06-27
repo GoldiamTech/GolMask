@@ -56,7 +56,7 @@ class CurrencyController {
       let timestamp
       if(this.currenciesReal.has(currentCurrency)) {
         response = await 
-          fetch(`https://api.coinmarketcap.com/v1/ticker/ethereum/?convert=${currentCurrency}`)
+          fetch(`https://api.coinmarketcap.com/v1/ticker/goldiam/?convert=${currentCurrency}`)
           .then( res => res.json() )
         primaryUsd   = Number(response[0][`price_${currentCurrency}`] || response[0].price_usd)
         secondaryUsd = 1
@@ -65,7 +65,7 @@ class CurrencyController {
       else {
         let secondaryPair = this.currencies[currentCurrency]
         response = await Promise.all([
-          fetch(`https://api.coinmarketcap.com/v1/ticker/ethereum`).then( res => res.json() ),
+          fetch(`https://api.coinmarketcap.com/v1/ticker/goldiam`).then( res => res.json() ),
           fetch(`https://api.coinmarketcap.com/v1/ticker/${secondaryPair}`).then( res => res.json() )
         ])
         primaryUsd   = Number(response[0][0].price_usd)

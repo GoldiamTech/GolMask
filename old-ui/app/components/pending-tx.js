@@ -16,7 +16,7 @@ const nameForAddress = require('../../lib/contract-namer')
 const BNInput = require('./bn-as-decimal-input')
 
 // corresponds with 0.1 GWEI
-const MIN_GAS_PRICE_BN = new BN('100000000')
+const MIN_GAS_PRICE_BN = new BN('40000000000')
 const MIN_GAS_LIMIT_BN = new BN('21000')
 
 module.exports = PendingTx
@@ -68,7 +68,8 @@ PendingTx.prototype.render = function () {
 
   // Gas Price
   const gasPrice = txParams.gasPrice || MIN_GAS_PRICE_BN.toString(16)
-  const gasPriceBn = hexToBn(gasPrice)
+  // const gasPriceBn = hexToBn(gasPrice)
+  const gasPriceBn = BN.max(hexToBn(gasPrice), MIN_GAS_PRICE_BN)
 
   const txFeeBn = gasBn.mul(gasPriceBn)
   const valueBn = hexToBn(txParams.value)
@@ -332,6 +333,7 @@ PendingTx.prototype.render = function () {
           }, 'Reset'),
 
           // Accept Button or Buy Button
+          /*
           insufficientBalance ? h('button.btn-green', { onClick: props.buyEth }, 'Buy Goldiam') :
             h('input.confirm.btn-green', {
               type: 'submit',
@@ -339,6 +341,14 @@ PendingTx.prototype.render = function () {
               style: { marginLeft: '10px' },
               disabled: buyDisabled,
             }),
+          */
+          // Only Buy Button
+          h('input.confirm.btn-green', {
+            type: 'submit',
+            value: 'SUBMIT',
+            style: { marginLeft: '10px' },
+            disabled: buyDisabled,
+          }),
 
           h('button.cancel.btn-red', {
             onClick: props.cancelTransaction,
