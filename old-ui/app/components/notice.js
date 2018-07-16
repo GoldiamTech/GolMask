@@ -91,7 +91,7 @@ Notice.prototype.render = function () {
           height: '310px',
           padding: '6px',
           width: '90%',
-          overflowY: 'scroll',
+          overflow: 'scroll',
           scroll: 'auto',
         },
       }, [
