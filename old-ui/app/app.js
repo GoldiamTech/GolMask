@@ -432,12 +432,12 @@ App.prototype.renderDropdown = function () {
       closeMenu: () => this.setState({ isMainMenuOpen: !isOpen }),
       onClick: () => { this.props.dispatch(actions.lockMetamask()) },
     }, 'Log Out'),
-    /*
     h(DropdownMenuItem, {
       closeMenu: () => this.setState({ isMainMenuOpen: !isOpen }),
       onClick: () => { this.props.dispatch(actions.showInfoPage()) },
     }, 'Info/Help'),
 
+    /*
     h(DropdownMenuItem, {
       closeMenu: () => this.setState({ isMainMenuOpen: !isOpen }),
       onClick: () => {
